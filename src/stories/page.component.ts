@@ -63,7 +63,7 @@ import type { User } from './user';
     </div>
   </section>
 </article>`,
-  styleUrls: ['./page.css'],
+  styleUrls: ['./page.scss'],
 })
 export class PageComponent {
   user: User | null = null;
