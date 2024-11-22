@@ -31,7 +31,56 @@
     "guards": [],
     "interceptors": [],
     "classes": [],
-    "directives": [],
+    "directives": [
+        {
+            "name": "MyDirectiveDirective",
+            "id": "directive-MyDirectiveDirective-c4327ca2f4e941f9198a01991e327496bca8b0a91ce809bcc9f6a61ebb0cf44d34af158444e3d374f93a4fe26f6fae0732689cf1f813f1b4af7515a9a73c555b",
+            "file": "src/directives/my-directive.directive.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Directive, ElementRef } from '@angular/core';\n\n@Directive({\n  selector: '[appMyDirective]',\n})\nexport class MyDirectiveDirective {\n  constructor(el: ElementRef) {\n    console.log(el, 'el');\n    el.nativeElement.onclick = () => {\n      console.log('click');\n    };\n  }\n  //  点击变成红色的指令\n}\n",
+            "selector": "[appMyDirective]",
+            "providers": [],
+            "hostDirectives": [],
+            "standalone": false,
+            "inputsClass": [],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "extends": [],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 6,
+                "jsdoctags": [
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
     "components": [
         {
             "name": "AppComponent",
@@ -439,7 +488,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 13,
+        "count": 11,
         "status": "low",
         "files": [
             {
@@ -459,6 +508,15 @@
                 "name": "appConfig",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/directives/my-directive.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "MyDirectiveDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {

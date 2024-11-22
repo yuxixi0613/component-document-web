@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
 import { fn } from '@storybook/test';
 
 import { ButtonComponent } from './button.component';
+import { MyDirectiveDirective } from '@src/directives/my-directive.directive';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<ButtonComponent> = {
@@ -26,6 +27,32 @@ export const Primary: Story = {
     primary: true,
     label: 'Button',
   },
+  parameters: {
+    backgrounds: {
+      values: [
+        // 👇 Default values
+        { name: 'Dark', value: '#333' },
+        { name: 'Light', value: '#F7F9F2' },
+        // 👇 Add your own
+        { name: 'Maroon', value: '#400' },
+      ],
+      // 👇 Specify which background is shown by default
+      default: 'Light',
+    },
+  },
+  decorators: [
+    moduleMetadata({
+      declarations: [MyDirectiveDirective],
+    }),
+    // componentWrapperDecorator((args) => `${args}`),
+  ],
+  render: (args) => ({
+    props: args,
+    template: `
+    <storybook-button appMyDirective>
+    </storybook-button>
+    `,
+  }),
 };
 
 export const Secondary: Story = {
