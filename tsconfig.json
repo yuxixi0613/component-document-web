@@ -22,7 +22,10 @@
     "module": "ES2022",
     "lib": ["ES2022", "dom"],
     "paths": {
-      "@src/*": ["src/*"]
+      "@src/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@documents/*": ["src/documents/*"],
+      "@stories/*": ["src/stories/*"]
     }
   },
   "angularCompilerOptions": {
